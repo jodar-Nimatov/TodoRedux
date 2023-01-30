@@ -26,7 +26,7 @@ export default (state = initialState, action) => {
         }
         case 'DELETE' : {
             return{
-                todos: [...state.todos.filter(todos => todos.id !== action.payload)
+                todos: [...state.todos.filter((todos, index) => index !== action.payload)
             ]}
         }
         case 'COMPLETE': {
@@ -52,10 +52,10 @@ export const addTodo = (title) => {
         return dispatch({type: 'ADD', title: title})
     }
 }
-export const removeTodo = (id) => {
+export const removeTodo = (index) => {
     return {
         type: 'DELETE',
-        payload:id
+        payload: index
     }
 }
 
