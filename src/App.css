@@ -1,0 +1,15 @@
+
+ul{
+  list-style: none;
+}
+
+li{
+  display: flex;
+
+  gap: 30px;
+}
+
+input:checked + span{
+  text-decoration: line-through;
+}
+
